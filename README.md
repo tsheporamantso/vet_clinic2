@@ -154,6 +154,6 @@ I would like to thank:
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](./LICENSE) licensed.
+This project is [MIT](https://github.com/tsheporamantso/vet_clinic2/blob/3489b23c8f2d07d38319fdb5c94c6d39474c6967/LICENSE) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
