@@ -38,3 +38,42 @@ WHERE weight_kg BETWEEN 10.4 AND 17.3;
 * ! Day 2 Query and Update animals table
 */
 
+BEGIN;
+UPDATE animals
+SET species = 'unspecified';
+SELECT * FROM animals;
+ROLLBACK;
+SELECT * FROM animals;
+
+BEGIN;
+UPDATE animals SET species = 'digimon' WHERE name LIKE '%mon%';
+UPDATE animals SET species = 'pokemon' WHERE species = '';
+COMMIT;
+SELECT * FROM animals;
+
+UPDATE animals
+SET species = 'pokemon'
+WHERE id = 3;
+SELECT * FROM animals;
+
+BEGIN;
+DELETE FROM animals;
+ROLLBACK;
+SELECT * FROM animals;
+
+BEGIN;
+DELETE FROM animals WHERE date_of_birth > '2022-01-01';
+
+SAVEPOINT sp1;
+
+UPDATE animals SET weight_kg = -1 * weight_kg;
+
+ROLLBACK TO SAVEPOINT sp1;
+
+UPDATE animals SET weight_kg = -1 * weight_kg WHERE weight_kg < 0;
+
+COMMIT;
+SELECT * FROM animals;
+
+
+
