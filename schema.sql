@@ -37,3 +37,14 @@ DROP COLUMN species;
 ALTER TABLE animals
 ADD COLUMN species_id INTEGER REFERENCES species(id),
 ADD COLUMN owners_id INTEGER REFERENCES owners(id);
+
+/**
+* ! Day 4 Join table for visits
+*/
+
+CREATE TABLE vets (
+    id BIGSERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    age INTEGER,
+    date_of_graduation DATE
+);
