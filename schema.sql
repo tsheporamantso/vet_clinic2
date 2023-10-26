@@ -48,3 +48,18 @@ CREATE TABLE vets (
     age INTEGER,
     date_of_graduation DATE
 );
+
+CREATE TABLE specializations (
+    id BIGSERIAL PRIMARY KEY,
+    vet_id INTEGER REFERENCES vets(id),
+    species_id INTEGER REFERENCES species(id),
+    UNIQUE (vet_id, species_id)
+);
+
+CREATE TABLE visits (
+    id BIGSERIAL PRIMARY KEY,
+    vet_id INTEGER REFERENCES vets(id),
+    animal_id INTEGER REFERENCES animals(id),
+    visit_date DATE,
+    UNIQUE(vet_id,animal_id,visit_date)
+);
