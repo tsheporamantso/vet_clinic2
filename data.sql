@@ -68,6 +68,12 @@ VALUES
 ('Stephanie Mendez', 64, '1981-05-04'),
 ('Jack Harkness', 38, '2008-06-08');
 
-INSERT INTO specializations (vet_id,species_id)
+/* Correcting name misspelled*/
+UPDATE vets
+SET name = 'William Tatcher'
+WHERE id = 1; 
+/* Correcting name misspelled end here*/
+
+INSERT INTO specializations (vet_id, species_id)
 VALUES
-()
+((SELECT id FROM vets WHERE name = 'William Tatcher'),(SELECT id FROM species WHERE name = 'Pokemon')),
